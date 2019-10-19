@@ -11,7 +11,7 @@ object FollowerRDDF {
       logger.error("Usage:\nFollowerCount.FollowerRDDF <input dir> <output dir>")
       System.exit(1)
     }
-    val conf = new SparkConf().setAppName("FollowerRDDG")
+    val conf = new SparkConf().setAppName("FollowerRDDF")
     val sc = new SparkContext(conf)
 
     // read the text file and output a RDD of strings

@@ -30,7 +30,6 @@ object FollowerDSET {
 
     // Read the input text file from input dir
     val dataSet: RDD[String] = sparkSession.sparkContext.textFile(args(0))
-    case class Follower(user_id: String, count: Int)
 
     /*val counts = dataSet.map(line => (line.split(",")(1), 1))
       .toDF("userId", "count")
