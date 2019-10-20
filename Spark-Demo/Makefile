@@ -4,10 +4,10 @@
 # -----------------------------------------------------------
 spark.root=/Users/wangyexin/Apache/spark-2.3.4-bin-without-hadoop
 hadoop.root=/Users/wangyexin/Apache/hadoop-2.9.2
-app.name=FollowerDSET
+app.name=Rep_R
 jar.name=spark-demo.jar
 maven.jar.name=spark-demo-1.0.jar
-job.name=FollowerCount.FollowerDSET
+job.name=Triangle.Rep_R
 local.master=local[4]
 local.input=input
 local.output=output
@@ -17,12 +17,12 @@ hdfs.input=input
 hdfs.output=output
 # AWS EMR Execution
 aws.emr.release=emr-5.26.0
-aws.bucket.name=elricsparkbucket
+aws.bucket.name=elricbucket
 aws.input=input
 aws.output=output
 aws.log.dir=log
-aws.num.nodes=5
-aws.instance.type=m4.xlarge
+aws.num.nodes=10
+aws.instance.type=m4.large
 # -----------------------------------------------------------
 
 # Compiles code and builds jar (with dependencies).
@@ -110,7 +110,7 @@ upload-app-aws:
 # Main EMR launch.
 aws: jar upload-app-aws delete-output-aws
 	aws emr create-cluster \
-		--name "FollowerCount Spark Cluster" \
+		--name "TriangleCount Spark Cluster" \
 		--release-label ${aws.emr.release} \
 		--instance-groups '[{"InstanceCount":${aws.num.nodes},"InstanceGroupType":"CORE","InstanceType":"${aws.instance.type}"},{"InstanceCount":1,"InstanceGroupType":"MASTER","InstanceType":"${aws.instance.type}"}]' \
 	    --applications Name=Hadoop Name=Spark \
