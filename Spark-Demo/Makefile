@@ -4,10 +4,10 @@
 # -----------------------------------------------------------
 spark.root=/Users/wangyexin/Apache/spark-2.3.4-bin-without-hadoop
 hadoop.root=/Users/wangyexin/Apache/hadoop-2.9.2
-app.name=Rep_R
+app.name=Rep_D
 jar.name=spark-demo.jar
 maven.jar.name=spark-demo-1.0.jar
-job.name=Triangle.Rep_R
+job.name=Triangle.Rep_D
 local.master=local[4]
 local.input=input
 local.output=output
@@ -21,7 +21,7 @@ aws.bucket.name=elricbucket
 aws.input=input
 aws.output=output
 aws.log.dir=log
-aws.num.nodes=10
+aws.num.nodes=5
 aws.instance.type=m4.large
 # -----------------------------------------------------------
 

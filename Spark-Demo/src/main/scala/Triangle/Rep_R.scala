@@ -11,7 +11,7 @@ import scala.collection.mutable
 object Rep_R {
 
   def main(args: Array[String]) {
-    val MAX = 15000
+    val MAX = 50000
     val logger: org.apache.log4j.Logger = LogManager.getRootLogger
     if (args.length != 2) {
       logger.error("Usage:\nTriangle.Rep_R <input dir> <output dir>")
